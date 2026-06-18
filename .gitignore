@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Raw source files — ASSETS/ is the web-ready copy used by the site.
+TOBY PORTFOLIO/
