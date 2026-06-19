@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Toby Halman — Graphic Designer</title>
-    <link rel="icon" type="image/jpeg" href="ASSETS/toby-headshot.jpeg">
-    <link rel="apple-touch-icon" href="ASSETS/toby-headshot.jpeg">
+    <link rel="icon" type="image/jpeg" href="ASSETS/toby-headshot.jpg">
+    <link rel="apple-touch-icon" href="ASSETS/toby-headshot.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Darker+Grotesque:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -352,17 +352,22 @@
             transform: translateY(0);
         }
 
-        /* Project detail header */
+        /* Project detail header — back link pinned left, title centered */
         .project-header {
+            position: relative;
             display: flex;
-            align-items: baseline;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 1.75rem;
             padding: 0 0.25rem;
+            min-height: 2.6rem;
         }
 
         .project-back {
+            position: absolute;
+            left: 0.25rem;
+            top: 50%;
+            transform: translateY(-50%);
             font-family: var(--font-body);
             font-size: 1rem;
             font-weight: 500;
@@ -383,6 +388,8 @@
             font-weight: 400;
             letter-spacing: -0.01em;
             line-height: 1.1;
+            text-align: center;
+            padding: 0 5.5rem;
         }
 
         /* About Panel */
@@ -748,6 +755,7 @@
 
             .project-title {
                 font-size: 1.9rem;
+                padding: 0 4rem;
             }
         }
     </style>
@@ -807,7 +815,7 @@
                 <div class="about-wrapper">
                     <div class="about-left">
                         <div class="about-photo">
-                            <img src="ASSETS/toby-headshot.jpeg" alt="Toby Halman">
+                            <img src="ASSETS/toby-headshot.jpg" alt="Toby Halman">
                         </div>
                     </div>
                     <div class="about-content">
