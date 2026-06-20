@@ -4,3 +4,10 @@ __pycache__/
 
 # Raw source files — ASSETS/ is the web-ready copy used by the site.
 TOBY PORTFOLIO/
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
