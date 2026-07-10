@@ -143,6 +143,14 @@
             color: var(--accent);
         }
 
+        .sidebar-footer .resume-link {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
         /* Main Content Area */
         .main-content {
             flex: 1;
@@ -319,6 +327,10 @@
         }
 
         /* Project thumbnail cards on the Work page */
+        .project-card {
+            container-type: inline-size;
+        }
+
         .project-card .project-overlay {
             position: absolute;
             inset: 0;
@@ -326,7 +338,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 1.5rem;
+            padding: clamp(0.5rem, 4cqw, 1.5rem);
             background: rgba(20, 20, 20, 0);
             transition: background 0.5s ease;
         }
@@ -335,7 +347,8 @@
             font-family: var(--font-display);
             font-weight: 500;
             color: #ffffff;
-            font-size: 1.9rem;
+            /* Scale with the tile so titles stay readable on narrow covers. */
+            font-size: clamp(1.1rem, 8cqw, 1.9rem);
             line-height: 1.2;
             letter-spacing: 0.01em;
             opacity: 0;
@@ -384,7 +397,7 @@
 
         .project-title {
             font-family: var(--font-display);
-            font-size: 2.4rem;
+            font-size: 2.9rem;
             font-weight: 400;
             letter-spacing: -0.01em;
             line-height: 1.1;
@@ -392,12 +405,63 @@
             padding: 0 5.5rem;
         }
 
-        /* About Panel */
+        /* Editorial treatment for the descriptor after the colon — an italic,
+           lighter counterpoint to the roman project name. */
+        .project-title em {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* Project intro — sits between the title and the gallery, matching
+           the reference mockup: blurb copy on the left, project meta on the
+           right, both aligned to the gallery's left/right edges. */
+        .project-blurb {
+            max-width: 1600px;
+            margin: 0 auto 2.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .project-blurb:empty {
+            display: none;
+        }
+
+        .blurb-copy {
+            font-family: var(--font-body);
+            font-size: 1.12rem;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        /* Right-hand meta column (client + deliverables, no labels). */
+        .blurb-meta {
+            font-family: var(--font-body);
+            font-size: 1.12rem;
+            line-height: 1.55;
+            color: var(--text-primary);
+        }
+
+        .blurb-meta .meta-client {
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .blurb-meta .meta-deliverables {
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        /* About Panel.
+           NOTE: the wrapper is centered with `margin: auto` (not
+           align-items/justify-content) so that when the content is taller
+           than the viewport — e.g. mobile Chrome — the top is never clipped
+           off above the scrollable area. */
         #about {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 6rem 4rem;
+            padding: 3.5rem 4rem;
             background: var(--bg-secondary);
             overflow-y: auto;
         }
@@ -408,6 +472,7 @@
             gap: 5rem;
             max-width: 1200px;
             align-items: start;
+            margin: auto;
         }
 
         .about-left {
@@ -421,32 +486,47 @@
             position: relative;
         }
 
+        /* Flat, squared presentation per Toby's mockup — no radius/shadow. */
         .about-photo img {
             width: 100%;
             height: auto;
-            border-radius: 4px;
-            box-shadow: 0 12px 40px rgba(26, 58, 74, 0.2);
+            display: block;
         }
 
         .about-content {
-            padding-top: 1rem;
+            padding-top: 0;
         }
 
         .about-content h2 {
             font-family: var(--font-display);
             font-size: 3.5rem;
             font-weight: 400;
-            margin-bottom: 2.5rem;
+            margin-bottom: 0.6rem;
             letter-spacing: -0.01em;
             line-height: 1.1;
         }
 
-        .about-content p {
-            font-size: 1.15rem;
-            font-weight: 400;
-            line-height: 1.9;
+        /* Discipline list under the About heading — bold sans serif on two
+           lines, sized between the heading and the body copy (per mockup). */
+        .about-content .about-disciplines {
+            font-family: var(--font-body);
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 1.35;
             color: var(--text-primary);
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.3rem;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
         }
 
         /* Contact Panel */
@@ -551,6 +631,30 @@
 
         .lightbox-close:hover {
             color: #fff;
+        }
+
+        /* Download link inside the lightbox (shown for the resume preview).
+           Pinned bottom-left, near where the "Resume" link lives in the
+           sidebar footer, so the action reads as related to it. */
+        .lightbox-download {
+            position: absolute;
+            bottom: 2rem;
+            left: 2.5rem;
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            display: none;
+        }
+
+        .lightbox-download:hover {
+            color: #fff;
+        }
+
+        .lightbox.has-download .lightbox-download {
+            display: block;
         }
 
         /* Page Loader */
@@ -744,6 +848,11 @@
 
             .about-content h2 {
                 font-size: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .about-content .about-disciplines {
+                font-size: 1.2rem;
                 margin-bottom: 1.5rem;
             }
 
@@ -757,8 +866,23 @@
             }
 
             .project-title {
-                font-size: 1.9rem;
+                font-size: 2.1rem;
                 padding: 0 4rem;
+            }
+
+            /* Stack the intro (copy then meta) on narrow screens. */
+            .project-blurb {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .blurb-copy {
+                font-size: 1.05rem;
+            }
+
+            .blurb-meta {
+                font-size: 1.05rem;
             }
         }
     </style>
@@ -793,6 +917,7 @@
                     </svg>
                     Toby Halman
                 </a>
+                <a href="ASSETS/toby-halman-resume.png" class="resume-link" onclick="openLightbox(this.href, 'ASSETS/toby-halman-resume.pdf'); return false;">Resume</a>
                 <p>© 2026</p>
             </div>
         </aside>
@@ -810,6 +935,7 @@
                     <a href="#work" class="project-back" data-panel="work">← Work</a>
                     <h1 class="project-title" id="project-title"></h1>
                 </div>
+                <div class="project-blurb" id="project-blurb"></div>
                 <div class="gallery-grid" id="project-grid"></div>
             </section>
 
@@ -823,11 +949,12 @@
                     </div>
                     <div class="about-content">
                         <h2>About</h2>
+                        <p class="about-disciplines">Branding &bull; Creative Direction<br>Motion Design &bull; Strategy</p>
                         <p>
-                            Toby Halman is a graphic designer based in Toronto, Ontario, with five years of agency experience crafting brands and visual systems that connect with clients and end users.
+                            Toby Halman is a graphic designer working at the intersection of design and culture. His eye moves across fashion, music, and sports, observing how these worlds communicate, then building the graphics, artifacts, and systems that represent them. His background in Industrial Design grounds his work in intention, always designing toward something, with someone in mind. Equal parts design practice and cultural study, his work aims to reimagine daily routines for a more thoughtful future.
                         </p>
                         <p>
-                            With a background in Industrial Design from OCAD University, he approaches branding through both strategic thinking and creative execution. His experience spans the nightlife, restaurant, real estate, and cannabis sectors, where he has helped businesses develop distinctive identities and cohesive brand experiences.
+                            Over five years at a multidisciplinary advertising agency, he has helped shape the visual identities of some of Toronto's biggest clubs, working across nightlife, hospitality, real estate, and cannabis. He believes most brands don't fail because they look bad. They fail because nobody decided what they actually were.
                         </p>
                     </div>
                 </div>
@@ -846,6 +973,7 @@
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
         <button class="lightbox-close">CLOSE</button>
+        <a class="lightbox-download" id="lightboxDownload" href="" download="Toby Halman Resume 2026.pdf" onclick="event.stopPropagation()">DOWNLOAD PDF</a>
         <img src="" alt="Enlarged view" id="lightboxImg">
     </div>
 
@@ -857,9 +985,18 @@
 
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxDownload = document.getElementById('lightboxDownload');
 
-        function openLightbox(src) {
+        // downloadHref (optional): when set, a "Download PDF" link is shown
+        // pointing at that file (used by the resume preview).
+        function openLightbox(src, downloadHref) {
             lightboxImg.src = src;
+            if (downloadHref) {
+                lightboxDownload.href = downloadHref;
+                lightbox.classList.add('has-download');
+            } else {
+                lightbox.classList.remove('has-download');
+            }
             lightbox.classList.add('active');
         }
         function closeLightbox() {
@@ -921,7 +1058,7 @@
                 const overlay = document.createElement('div');
                 overlay.className = 'project-overlay';
                 const span = document.createElement('span');
-                span.textContent = p.title;
+                span.textContent = p.title.replace(':', '');
                 overlay.appendChild(span);
                 card.appendChild(overlay);
                 const fallback = cover && cover.type === 'video' ? 0.7 : 1.6;
@@ -1036,81 +1173,10 @@
                 return rowEl;
             }
 
-            // Find the most-portrait cover. If it is clearly vertical, promote
-            // it to a "feature" tile spanning two rows so it lands large on the
-            // page instead of being squeezed into a thin justified sliver.
-            let fIdx = -1, minAsp = Infinity;
-            workCards.forEach((c, i) => { const a = c.aspect || 1.6; if (a < minAsp) { minAsp = a; fIdx = i; } });
-            const useFeature = minAsp < 0.75 && workCards.length >= 4;
-
-            if (useFeature) {
-                const feature = workCards[fIdx];
-                const others = workCards.filter((_, i) => i !== fIdx);
-                const aspF = feature.aspect || 0.5625;
-
-                // Vertical "levels": the feature spans 2; pick a total that
-                // fills the viewport, leaving the rest as full-width rows.
-                let levels = Math.round(Math.sqrt(Math.max(1, availH) * totalAspect / Math.max(1, W)));
-                levels = Math.max(3, Math.min(levels, 6));
-
-                let h = (availH - (levels - 1) * gap) / levels;
-                let featureH = 2 * h + gap;
-                let wF = aspF * featureH;
-                const maxWF = W * 0.46;             // keep the feature from hogging the width
-                if (wF > maxWF) {
-                    wF = maxWF;
-                    featureH = wF / aspF;
-                    h = (featureH - gap) / 2;
-                }
-                const nBottom = Math.max(1, Math.round((availH - featureH - gap) / (h + gap)));
-                const Wt = Math.max(60, W - wF - gap);
-                const capTop = Wt / h;
-                const capNorm = W / h;
-
-                // Greedily pack covers (in order) up to a target aspect sum.
-                const takeRow = (cap) => {
-                    const items = [];
-                    let sum = 0;
-                    while (others.length) {
-                        const a = others[0].aspect || 1.6;
-                        if (items.length && Math.abs((sum + a) - cap) > Math.abs(sum - cap)) break;
-                        items.push(others.shift());
-                        sum += a;
-                    }
-                    return items;
-                };
-
-                const topRows = [takeRow(capTop), takeRow(capTop)];
-                const bottomRows = [];
-                for (let i = 0; i < nBottom && others.length; i++) bottomRows.push(takeRow(capNorm));
-                if (others.length) {
-                    if (!bottomRows.length) bottomRows.push([]);
-                    bottomRows[bottomRows.length - 1].push(...others.splice(0));
-                }
-
-                // Top section: feature tile on the left, its two rows on the right.
-                const top = document.createElement('div');
-                top.className = 'work-row';
-                feature.el.style.width = wF + 'px';
-                feature.el.style.height = featureH + 'px';
-                top.appendChild(feature.el);
-                const right = document.createElement('div');
-                right.style.display = 'flex';
-                right.style.flexDirection = 'column';
-                right.style.gap = gap + 'px';
-                right.style.flex = '1 1 auto';
-                topRows.forEach(r => { if (r.length) right.appendChild(renderRow(r, Wt, h)); });
-                top.appendChild(right);
-                grid.appendChild(top);
-
-                bottomRows.forEach(r => { if (r.length) grid.appendChild(renderRow(r, W, h)); });
-
-                observeLazyVideos(grid);
-                return;
-            }
-
-            // No strongly-vertical cover: classic justified mosaic, every cover
-            // shown in full (aspect preserved, no cropping).
+            // Justified mosaic: pick a row count so the grid fills roughly
+            // the viewport height, then split covers into balanced rows. Each
+            // row is width-justified at a single height, so every cover keeps
+            // its true aspect ratio (no cropping) and the grid fills the space.
             const aspects = workCards.map(c => c.aspect || 1.6);
             let rows = Math.round(Math.sqrt(Math.max(1, availH) * totalAspect / Math.max(1, W)));
             rows = Math.max(1, Math.min(rows, workCards.length, 6));
@@ -1138,9 +1204,53 @@
             return wrap;
         }
 
+        /* Renders a project heading. The colon in the manifest is only a
+           marker: the name renders roman and the descriptor after it renders
+           as an italic counterpoint — the colon itself is not shown. */
+        function renderProjectTitle(el, title) {
+            el.textContent = '';
+            const idx = title.indexOf(':');
+            if (idx === -1) {
+                el.textContent = title;
+                return;
+            }
+            el.appendChild(document.createTextNode(title.slice(0, idx).trim() + ' '));
+            const em = document.createElement('em');
+            em.textContent = title.slice(idx + 1).trim();
+            el.appendChild(em);
+        }
+
         function buildProjectGrid(project) {
             const grid = document.getElementById('project-grid');
-            document.getElementById('project-title').textContent = project.title;
+            renderProjectTitle(document.getElementById('project-title'), project.title);
+
+            // Project intro between the title and the gallery: blurb copy on
+            // the left, meta (client + deliverables) on the right.
+            const blurbEl = document.getElementById('project-blurb');
+            blurbEl.innerHTML = '';
+            if (project.blurb) {
+                const copy = document.createElement('div');
+                copy.className = 'blurb-copy';
+                copy.textContent = project.blurb;
+                blurbEl.appendChild(copy);
+            }
+            if (project.client || project.deliverables) {
+                const meta = document.createElement('div');
+                meta.className = 'blurb-meta';
+                if (project.client) {
+                    const c = document.createElement('p');
+                    c.className = 'meta-client';
+                    c.textContent = project.client;
+                    meta.appendChild(c);
+                }
+                if (project.deliverables) {
+                    const d = document.createElement('p');
+                    d.className = 'meta-deliverables';
+                    d.textContent = project.deliverables;
+                    meta.appendChild(d);
+                }
+                blurbEl.appendChild(meta);
+            }
             grid.classList.remove('loaded', 'single', 'columns');
             grid.innerHTML = '';
             projectCards = [];

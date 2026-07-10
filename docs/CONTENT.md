@@ -31,6 +31,9 @@ All project data is in **`projects-manifest.js`**. Media files live in **`ASSETS
     slug: "westlo-district",          // URL: #work/westlo-district
     title: "Westlo District",         // Display name on Work page
     order: 2,                         // Sort order (lower = earlier)
+    client: "Westlo District",        // Right-hand meta (optional; omit if none)
+    deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
+    blurb: "Nestled between transit and nature, Westlo District is defined by duality. ...",
     cover: { type: "image", src: "ASSETS/projects/westlo-district/cover.jpg", aspect: 1.7778 },
     items: [
         { type: "image", src: "ASSETS/projects/westlo-district/01.jpg", aspect: 1.7778 },
@@ -45,6 +48,9 @@ All project data is in **`projects-manifest.js`**. Media files live in **`ASSETS
 | `slug` | Folder name and URL segment |
 | `title` | Project name shown in the UI |
 | `order` | Position on the Work page (1 = first) |
+| `client` | Right-hand meta column, top line (optional — omit for personal/unnamed work) |
+| `deliverables` | Right-hand meta column, second line (services list, e.g. "Logo Design, Typography") |
+| `blurb` | Project description shown on the left, between the title and the gallery |
 | `cover` | Thumbnail on the Work grid |
 | `items` | Gallery media, in display order |
 | `aspect` | Width ÷ height — controls justified row layout |

@@ -12,8 +12,11 @@
 window.PROJECTS_MANIFEST = [
     {
         slug: "city-park",
-        title: "City Park — Corporate Rebrand",
+        title: "City Park: Corporate Rebrand",
         order: 1,
+        client: "City Park",
+        deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
+        blurb: "City Park, a real estate developer with international ambitions, required a complete corporate rebrand that could scale across markets and industries. The new identity centers on a refined monogram, symbolizing the developer\u2019s mark of quality throughout the building process. A distinctive file-shaped graphic element was introduced as a recognizable cornerstone of the brand system, helping City Park stand apart in a crowded real estate landscape.",
         cover: { type: "image", src: "ASSETS/projects/city-park/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/city-park/cover.jpg", aspect: 1.7778 },
@@ -34,6 +37,9 @@ window.PROJECTS_MANIFEST = [
         slug: "westlo-district",
         title: "Westlo District",
         order: 2,
+        client: "Westlo District",
+        deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
+        blurb: "Nestled between transit and nature, Westlo District is defined by duality. The identity expresses this through layered imagery that frames contrasting environments, reflecting the development\u2019s interconnected character. The logo reinforces the concept by referencing the titular western direction, with a compass-inspired mark that confidently points toward a new place to call home.",
         cover: { type: "image", src: "ASSETS/projects/westlo-district/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "video", src: "ASSETS/projects/westlo-district/09.mp4", aspect: 1.7778 },
@@ -52,6 +58,9 @@ window.PROJECTS_MANIFEST = [
         slug: "central-cee",
         title: "Central Cee Concert Poster",
         order: 3,
+        client: "Future",
+        deliverables: "Brand System, Motion Design, Poster Design",
+        blurb: "Nightlife venue Future commissioned a promotional campaign for a live performance by Central Cee. Drawing from the colour palette and photography of the artist\u2019s album artwork, we developed a cohesive suite of print, social, and motion assets that built anticipation for the sold-out event. A custom wordmark featuring a condensed modern serif gave the artist\u2019s name a bold, instantly recognizable presence across every touchpoint.",
         cover: { type: "video", src: "ASSETS/projects/central-cee/cover.mp4", aspect: 0.5625 },
         items: [
             { type: "video", src: "ASSETS/projects/central-cee/cover.mp4", aspect: 0.5625 },
@@ -63,8 +72,11 @@ window.PROJECTS_MANIFEST = [
     },
     {
         slug: "tamarack",
-        title: "Tamarack — Corporate Rebrand",
+        title: "Tamarack: Corporate Rebrand",
         order: 4,
+        client: "Tamarack",
+        deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
+        blurb: "Ottawa-based low-rise developer Tamarack approached us to refresh its corporate identity while honouring the brand\u2019s 80-year legacy. Inspired by the tamarack tree and the company\u2019s history, we evolved the identity into one that feels both contemporary and enduring. The logo was reimagined by replacing the rigid all-caps wordmark with a refined title-case serif, creating a calmer, more elevated brand presence.",
         cover: { type: "image", src: "ASSETS/projects/tamarack/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/tamarack/cover.jpg", aspect: 1.7778 },
@@ -81,6 +93,8 @@ window.PROJECTS_MANIFEST = [
         slug: "vape-brand-exploration",
         title: "Vape Brand Exploration",
         order: 5,
+        deliverables: "Logo Design, Typography, Packaging",
+        blurb: "Developed three distinct brand concepts for a new cannabis vape product, each built around a unique strategic narrative. Alta draws on the feeling of being \u201chigh,\u201d blending the visual language of air travel with cloud motifs that evoke both altitude and smoke. Keyner takes inspiration from glass block architecture, using refracted forms and selectively stretched typography to express altered perception. Portal explores the time-warping effects of cannabis through a retro-futuristic identity, complete with a bold colour palette and forward-looking logo system.",
         cover: { type: "image", src: "ASSETS/projects/vape-brand-exploration/cover.jpg", aspect: 1.776 },
         // Arranged as three brand columns, left to right: Alta, Keyner, Portal.
         columns: [
@@ -106,6 +120,9 @@ window.PROJECTS_MANIFEST = [
         slug: "the-bogart-hills",
         title: "The Bogart Hills",
         order: 6,
+        client: "The Bogart Hills",
+        deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
+        blurb: "The Bogart Hills creates a distinctive identity for the Toronto suburb of Newmarket by connecting its history with its future. Historic photography, nostalgic textures, and heritage-inspired patterns were combined to evoke a strong sense of home, belonging, and community.",
         cover: { type: "image", src: "ASSETS/projects/the-bogart-hills/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/the-bogart-hills/cover.jpg", aspect: 1.7778 },
@@ -122,6 +139,9 @@ window.PROJECTS_MANIFEST = [
         slug: "maximes-golden-hour",
         title: "Maxime's Golden Hour",
         order: 7,
+        client: "Maxime's",
+        deliverables: "Logo Design, Brand System, Menu Design",
+        blurb: "King Street restaurant Maxime\u2019s approached us to elevate its happy hour program through a refreshed visual identity. Building on the existing serif logo, we introduced an ornate script that creates contrast while seamlessly connecting the wordmark. Etching-style illustrations brought the menu to life with a nostalgic character, drawing inspiration from the elegance of mid-20th-century fine dining.",
         cover: { type: "image", src: "ASSETS/projects/maximes-golden-hour/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/maximes-golden-hour/cover.jpg", aspect: 1.7778 },
@@ -135,6 +155,8 @@ window.PROJECTS_MANIFEST = [
         slug: "personal-necklace-project",
         title: "Personal Necklace Project",
         order: 8,
+        deliverables: "Logo Design",
+        blurb: "Inspired by the Baltimore Orioles \u201cO\u2019s\u201d logo, I created a custom jewelry set for my partner and myself, using her initials as the foundation of the design. By removing the apostrophe from the original mark, I transformed the logo into a personalized monogram and extended the concept by adapting its script style into a matching \u201cTH\u201d piece for my own initials.",
         cover: { type: "image", src: "ASSETS/projects/personal-necklace-project/cover.jpg", aspect: 0.8 },
         items: [
             { type: "image", src: "ASSETS/projects/personal-necklace-project/cover.jpg", aspect: 0.8 },
