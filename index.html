@@ -450,8 +450,8 @@
         }
 
         .blurb-meta .meta-deliverables {
-            font-weight: 400;
-            color: var(--text-secondary);
+            font-weight: 700;
+            color: var(--text-primary);
         }
 
         /* About Panel.
@@ -870,19 +870,22 @@
                 padding: 0 4rem;
             }
 
-            /* Stack the intro (copy then meta) on narrow screens. */
+            /* Stack the intro on narrow screens with the deliverables pulled
+               up above the description copy. */
             .project-blurb {
                 grid-template-columns: 1fr;
-                gap: 1.25rem;
+                gap: 1rem;
                 margin-bottom: 1.5rem;
             }
 
             .blurb-copy {
                 font-size: 1.05rem;
+                order: 1;
             }
 
             .blurb-meta {
                 font-size: 1.05rem;
+                order: 0;
             }
         }
     </style>
@@ -1225,7 +1228,8 @@
             renderProjectTitle(document.getElementById('project-title'), project.title);
 
             // Project intro between the title and the gallery: blurb copy on
-            // the left, meta (client + deliverables) on the right.
+            // the left, deliverables on the right (client name intentionally
+            // omitted). On mobile the deliverables move above the copy.
             const blurbEl = document.getElementById('project-blurb');
             blurbEl.innerHTML = '';
             if (project.blurb) {
@@ -1234,21 +1238,13 @@
                 copy.textContent = project.blurb;
                 blurbEl.appendChild(copy);
             }
-            if (project.client || project.deliverables) {
+            if (project.deliverables) {
                 const meta = document.createElement('div');
                 meta.className = 'blurb-meta';
-                if (project.client) {
-                    const c = document.createElement('p');
-                    c.className = 'meta-client';
-                    c.textContent = project.client;
-                    meta.appendChild(c);
-                }
-                if (project.deliverables) {
-                    const d = document.createElement('p');
-                    d.className = 'meta-deliverables';
-                    d.textContent = project.deliverables;
-                    meta.appendChild(d);
-                }
+                const d = document.createElement('p');
+                d.className = 'meta-deliverables';
+                d.textContent = project.deliverables;
+                meta.appendChild(d);
                 blurbEl.appendChild(meta);
             }
             grid.classList.remove('loaded', 'single', 'columns');
