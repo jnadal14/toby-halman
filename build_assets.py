@@ -82,7 +82,6 @@ ASSETS = ROOT / "ASSETS"
 TITLES = {
     1: ("city-park", "City Park \u2014 Corporate Rebrand"),
     2: ("westlo-district", "Westlo District"),
-    3: ("central-cee", "Central Cee Concert Poster"),
     4: ("tamarack", "Tamarack \u2014 Corporate Rebrand"),
     5: ("vape-brand-exploration", "Vape Brand Exploration"),
     6: ("the-bogart-hills", "The Bogart Hills"),

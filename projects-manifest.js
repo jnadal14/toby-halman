@@ -55,22 +55,6 @@ window.PROJECTS_MANIFEST = [
         ],
     },
     {
-        slug: "central-cee",
-        title: "Central Cee Concert Poster",
-        order: 3,
-        client: "Future",
-        deliverables: "Brand System, Motion Design, Poster Design",
-        blurb: "Nightlife venue Future commissioned a promotional campaign for a live performance by Central Cee. Drawing from the colour palette and photography of the artist\u2019s album artwork, we developed a cohesive suite of print, social, and motion assets that built anticipation for the sold-out event. A custom wordmark featuring a condensed modern serif gave the artist\u2019s name a bold, instantly recognizable presence across every touchpoint.",
-        cover: { type: "video", src: "ASSETS/projects/central-cee/cover.mp4", aspect: 0.5625 },
-        items: [
-            { type: "video", src: "ASSETS/projects/central-cee/cover.mp4", aspect: 0.5625 },
-            { type: "image", src: "ASSETS/projects/central-cee/03.jpg", aspect: 0.5625 },
-            { type: "image", src: "ASSETS/projects/central-cee/02.jpg", aspect: 0.5625 },
-            { type: "video", src: "ASSETS/projects/central-cee/04.mp4", aspect: 0.5625 },
-            { type: "image", src: "ASSETS/projects/central-cee/01.jpg", aspect: 2.0 },
-        ],
-    },
-    {
         slug: "tamarack",
         title: "Tamarack: Corporate Rebrand",
         order: 4,

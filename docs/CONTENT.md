@@ -16,7 +16,7 @@ Both sections live in `index.html`.
 <a href="mailto:Thalman.studio@gmail.com">Thalman.studio@gmail.com</a>
 ```
 
-**Headshot** — replace `ASSETS/toby-headshot.jpg` with a new image (keep the same filename, or update the `src` in `index.html` and the favicon `<link>` tags in `<head>`).
+**Headshot** — replace `ASSETS/toby-headshot.jpg` with a new image (keep the same filename, or update the `src` in `index.html`).
 
 ---
 
