@@ -55,12 +55,26 @@ window.PROJECTS_MANIFEST = [
         ],
     },
     {
+        slug: "crime-stoppers",
+        title: "Crime Stoppers Anti-Radicalization Campaign",
+        order: 3,
+        client: "Crime Stoppers",
+        deliverables: "Campaign Development & Design, Art Direction, Poster Design",
+        blurb: "Developed a campaign for Crime Stoppers focused on preventing acts of radical violence before they happen. Working closely with a copywriter, I helped develop two distinct creative directions built around the idea of stopping radical thought at its source. The first draws on the visual language of Constructivist design, using the colloquialism of the \u201cpipeline\u201d as a unifying motif across three poster designs. The second explores darkness as a visual metaphor for the anonymity the internet affords its users.",
+        cover: { type: "image", src: "ASSETS/projects/crime-stoppers/cover.jpg", aspect: 0.5625 },
+        items: [
+            { type: "image", src: "ASSETS/projects/crime-stoppers/01.jpg", aspect: 1.7778 },
+            { type: "image", src: "ASSETS/projects/crime-stoppers/02.jpg", aspect: 1.7778 },
+            { type: "image", src: "ASSETS/projects/crime-stoppers/03.jpg", aspect: 1.3459 },
+        ],
+    },
+    {
         slug: "tamarack",
         title: "Tamarack: Corporate Rebrand",
         order: 4,
         client: "Tamarack",
         deliverables: "Logo Design, Brand System, Brand Identity, Art Direction",
-        blurb: "Ottawa-based low-rise developer Tamarack approached us to refresh its corporate identity while honouring the brand\u2019s 80-year legacy. Inspired by the tamarack tree and the company\u2019s history, we evolved the identity into one that feels both contemporary and enduring. The logo was reimagined by replacing the rigid all-caps wordmark with a refined title-case serif, creating a calmer, more elevated brand presence.",
+        blurb: "Ottawa-based low-rise developer Tamarack approached us to refresh its corporate identity while honouring the brand\u2019s 80-year legacy. Inspired by the tamarack tree and the company\u2019s history, I evolved the identity into one that feels both contemporary and enduring. The logo was reimagined by replacing the rigid all-caps wordmark with a refined title-case serif, creating a calmer, more elevated brand presence.",
         cover: { type: "image", src: "ASSETS/projects/tamarack/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/tamarack/cover.jpg", aspect: 1.7778 },
@@ -125,7 +139,7 @@ window.PROJECTS_MANIFEST = [
         order: 7,
         client: "Maxime's",
         deliverables: "Logo Design, Brand System, Menu Design",
-        blurb: "King Street restaurant Maxime\u2019s approached us to elevate its happy hour program through a refreshed visual identity. Building on the existing serif logo, we introduced an ornate script that creates contrast while seamlessly connecting the wordmark. Etching-style illustrations brought the menu to life with a nostalgic character, drawing inspiration from the elegance of mid-20th-century fine dining.",
+        blurb: "King Street restaurant Maxime\u2019s approached us to elevate its happy hour program through a refreshed visual identity. Building on the existing serif logo, I introduced an ornate script that creates contrast while seamlessly connecting the wordmark. Etching-style illustrations brought the menu to life with a nostalgic character, drawing inspiration from the elegance of mid-20th-century fine dining.",
         cover: { type: "image", src: "ASSETS/projects/maximes-golden-hour/cover.jpg", aspect: 1.7778 },
         items: [
             { type: "image", src: "ASSETS/projects/maximes-golden-hour/cover.jpg", aspect: 1.7778 },
