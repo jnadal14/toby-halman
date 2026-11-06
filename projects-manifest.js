@@ -61,7 +61,7 @@ window.PROJECTS_MANIFEST = [
         client: "Crime Stoppers",
         deliverables: "Campaign Development & Design, Art Direction, Poster Design",
         blurb: "Developed a campaign for Crime Stoppers focused on preventing acts of radical violence before they happen. Working closely with a copywriter, I helped develop two distinct creative directions built around the idea of stopping radical thought at its source. The first draws on the visual language of Constructivist design, using the colloquialism of the \u201cpipeline\u201d as a unifying motif across three poster designs. The second explores darkness as a visual metaphor for the anonymity the internet affords its users.",
-        cover: { type: "image", src: "ASSETS/projects/crime-stoppers/cover.jpg", aspect: 0.5625 },
+        cover: { type: "image", src: "ASSETS/projects/crime-stoppers/cover.jpg", aspect: 1.0128 },
         items: [
             { type: "image", src: "ASSETS/projects/crime-stoppers/01.jpg", aspect: 1.7778 },
             { type: "image", src: "ASSETS/projects/crime-stoppers/02.jpg", aspect: 1.7778 },
